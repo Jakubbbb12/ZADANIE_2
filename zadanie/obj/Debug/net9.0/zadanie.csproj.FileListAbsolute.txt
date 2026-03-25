@@ -1,0 +1,14 @@
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/bin/Debug/net9.0/zadanie
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/bin/Debug/net9.0/zadanie.deps.json
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/bin/Debug/net9.0/zadanie.runtimeconfig.json
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/bin/Debug/net9.0/zadanie.dll
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/bin/Debug/net9.0/zadanie.pdb
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.AssemblyInfoInputs.cache
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.AssemblyInfo.cs
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.csproj.CoreCompileInputs.cache
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.dll
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/refint/zadanie.dll
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.pdb
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.genruntimeconfig.cache
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/ref/zadanie.dll
