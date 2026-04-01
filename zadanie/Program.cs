@@ -51,7 +51,7 @@ class Playlist
     {
         if (playlistTitle.Length > 16)
         {
-            throw new ArgumentException("Tytuł playlisty nie moe przekraczać 16 znaków");
+            throw new ArgumentException("Błąd 03: Tytuł playlisty nie moze przekraczać 16 znaków.");
         }
 
         PlaylistTitle = playlistTitle;
@@ -79,7 +79,15 @@ class Playlist
     public void RemoveTrack(string title)
     {
         Track toRemove = Tracks.Find(t => t.Title == title);
-        Tracks.Remove(toRemove);
+
+        if (toRemove != null)
+        {
+            Tracks.Remove(toRemove);
+        }
+        else
+        {
+            Console.WriteLine("Błąd 02: Nie znaleziono tracku o podanej nazwie.");
+        }
     }
 
     public void Play()
@@ -132,7 +140,15 @@ class User
     public void RemovePlaylist(string title)
     {
         Playlist toRemove = Playlists.Find(p => p.PlaylistTitle == title);
-        Playlists.Remove(toRemove);
+
+        if (toRemove != null)
+        {
+            Playlists.Remove(toRemove);
+        }
+        else
+        {
+            Console.WriteLine("Błąd 01: Nie znaleziono playlisty o podanej nazwie.");
+        }
     }
 
     public void ShowPlaylists()
@@ -143,8 +159,6 @@ class User
         }
     }
 }
-
-
 
 class Program
 {
