@@ -12,3 +12,4 @@
 /Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.pdb
 /Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.genruntimeconfig.cache
 /Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/ref/zadanie.dll
+/Users/jakubmajcher/Documents/GitHub/ZADANIE_2/zadanie/obj/Debug/net9.0/zadanie.sourcelink.json

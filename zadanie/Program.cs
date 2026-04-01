@@ -8,9 +8,9 @@ class Track
     public String Singer{ get; init;}
     public int Duration{ get; init;}
     public String Genre{ get; init;}
-    public DateTime AddedAt{ get; init;}
+    public DateOnly AddedAt{ get; init;}
 
-    public Track(string title, string singer, int duration, string genre, DateTime addedAt)
+    public Track(string title, string singer, int duration, string genre, DateOnly addedAt)
     {
         Title = title;
         Singer = singer;
@@ -21,7 +21,7 @@ class Track
 
     public void TrackInfo()
     {
-        Console.WriteLine($"Tytuł: {Title}, Wykonawca: {Singer}");
+        Console.WriteLine($"Tytuł: {Title}, Wykonawca: {Singer}, {Duration}s, {Genre}, Utworzony {AddedAt}");
     }
 }
 
@@ -164,6 +164,26 @@ class Program
 {
     static void Main()
     {
+        User user1 = new User("Jakub1");
+        Playlist playlist1 = new Playlist("Ulubione");
+        user1.NewPlaylist(playlist1);
+        Playlist playlist2 = new Playlist("Playlista2");
+        user1.NewPlaylist(playlist2);
+
         
+        Track track1 = new Track("505", "Arctic Monkeys", 252, "dream pop", new DateOnly(2007, 4, 23));
+
+        Track track2 = new Track("Stolen Dance", "Milky Chance", 314, "Indie pop", new DateOnly(2013, 4, 5));
+
+        playlist1.AddTrack(track1);
+        playlist2.AddTrack(track2);
+
+        user1.ShowPlaylists();
+
+        Console.WriteLine("<<Sprawdzanie metod>>");
+
+        user1.RemovePlaylist("Playlista2");
+        playlist1.RemoveTrack("505");
+        user1.ShowPlaylists();
     }
 }
