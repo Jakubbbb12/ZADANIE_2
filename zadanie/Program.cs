@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Numerics;
+
 //System playlist muzycznych – klasy Track, Playlist, User; tworzenie, modyfikacja i odtwarzanie list utworów
 class Track
 {
@@ -54,10 +53,9 @@ class Playlist
         {
             throw new ArgumentException("Tytuł playlisty nie moe przekraczać 16 znaków");
         }
-        
+
         PlaylistTitle = playlistTitle;
         Tracks = new List<Track>();
-        Playlists = new List<Playlist>();
     }
     
 
@@ -82,17 +80,6 @@ class Playlist
     {
         Track toRemove = Tracks.Find(t => t.Title == title);
         Tracks.Remove(toRemove);
-    }
-    public List<Playlist> Playlists{get; set;}
-    public void NewPlaylist(Playlist playlist)
-    {
-        Playlists.Add(playlist);
-    }
-
-    public void RemovePlaylist(string title)
-    {
-        Playlist toRemove = Playlists.Find(p => p.PlaylistTitle == title);
-        Playlists.Remove(toRemove);
     }
 
     public void Play()
@@ -128,7 +115,33 @@ class Playlist
 
 class User
 {
+    public String Username { get; set; }
+    public List<Playlist> Playlists{get; set;}
 
+    public User(string username)
+    {
+        Username = username;
+        Playlists = new List<Playlist>();
+    }
+
+    public void NewPlaylist(Playlist playlist)
+    {
+        Playlists.Add(playlist);
+    }
+
+    public void RemovePlaylist(string title)
+    {
+        Playlist toRemove = Playlists.Find(p => p.PlaylistTitle == title);
+        Playlists.Remove(toRemove);
+    }
+
+    public void ShowPlaylists()
+    {
+        foreach (Playlist playlist in Playlists)
+        {
+            playlist.PlaylistInfo();
+        }
+    }
 }
 
 
