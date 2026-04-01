@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Numerics;
 //System playlist muzycznych – klasy Track, Playlist, User; tworzenie, modyfikacja i odtwarzanie list utworów
 class Track
@@ -24,7 +25,7 @@ class Track
         Console.WriteLine($"Tytuł: {Title}, Wykonawca: {Singer}");
     }
 }
-//dodac czas lacznego czasu ze wszystkich trackow
+
 class Playlist
 {
     public List<Track> Tracks{get; set;}
@@ -49,8 +50,14 @@ class Playlist
 
     public Playlist(string playlistTitle)
     {
+        if (playlistTitle.Length > 16)
+        {
+            throw new ArgumentException("Tytuł playlisty nie moe przekraczać 16 znaków");
+        }
+        
         PlaylistTitle = playlistTitle;
         Tracks = new List<Track>();
+        Playlists = new List<Playlist>();
     }
     
 
@@ -76,8 +83,54 @@ class Playlist
         Track toRemove = Tracks.Find(t => t.Title == title);
         Tracks.Remove(toRemove);
     }
+    public List<Playlist> Playlists{get; set;}
+    public void NewPlaylist(Playlist playlist)
+    {
+        Playlists.Add(playlist);
+    }
+
+    public void RemovePlaylist(string title)
+    {
+        Playlist toRemove = Playlists.Find(p => p.PlaylistTitle == title);
+        Playlists.Remove(toRemove);
+    }
+
+    public void Play()
+    {
+        Console.WriteLine($"Odtwarzanie playlisty: {PlaylistTitle}");
+        foreach (Track track in Tracks)
+        {
+            track.TrackInfo();
+        }
+    }
+
+    public void PlayRandom()
+    {
+        Random rng = new Random();
+        List<Track> shuffled = new List<Track>(Tracks);
+
+        for (int i = shuffled.Count - 1; i > 0; i--)
+        {
+            int j = rng.Next(i + 1);
+            Track temp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = temp;
+        }
+
+        Console.WriteLine($"Odtwarzanie losowe: {PlaylistTitle}");
+        foreach (Track track in shuffled)
+        {
+            track.TrackInfo();
+        }
+    }
 
 }
+
+class User
+{
+
+}
+
 
 
 class Program
