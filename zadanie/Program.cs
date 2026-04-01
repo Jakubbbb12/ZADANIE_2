@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 //System playlist muzycznych – klasy Track, Playlist, User; tworzenie, modyfikacja i odtwarzanie list utworów
+//WERSJA C#
 class Track
 {
     public String Title{ get; init;}
