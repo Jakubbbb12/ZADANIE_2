@@ -1,5 +1,6 @@
 import random
 from datetime import date
+
 class Track:
     def __init__(self, title, singer, duration, genre, addedat):
         self.title = title
